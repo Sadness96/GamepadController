@@ -35,6 +35,61 @@ namespace GamepadController.Views
             directInputHelper.ButtonChange += DirectInputHelper_ButtonChange;
         }
 
+        #region 右键菜单
+        /// <summary>
+        /// 是否无边框
+        /// true:无边框 false:Windows边框
+        /// </summary>
+        private bool IsNoBorder;
+
+        /// <summary>
+        /// 窗口化/无边框
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NoBorder_Click(object sender, RoutedEventArgs e)
+        {
+            if (IsNoBorder)
+            {
+                WindowStyle = WindowStyle.SingleBorderWindow;
+                ResizeMode = ResizeMode.CanResizeWithGrip;
+                Background = Brushes.White;
+            }
+            else
+            {
+                WindowStyle = WindowStyle.None;
+                ResizeMode = ResizeMode.NoResize;
+                Background = Brushes.Transparent;
+                AllowsTransparency = true;
+            }
+            IsNoBorder = !IsNoBorder;
+        }
+
+        /// <summary>
+        /// 是否绿幕
+        /// true:绿幕 false:透明
+        /// </summary>
+        private bool IsGreenCurtain = false;
+
+        /// <summary>
+        /// 透明/绿幕
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GreenCurtain_Click(object sender, RoutedEventArgs e)
+        {
+            if (IsGreenCurtain)
+            {
+                ThisGrid.Background = Brushes.Transparent;
+            }
+            else
+            {
+                ThisGrid.Background = Brushes.Green;
+            }
+            IsGreenCurtain = !IsGreenCurtain;
+        }
+        #endregion
+
         /// <summary>
         /// 摇杆状态改变时触发
         /// </summary>

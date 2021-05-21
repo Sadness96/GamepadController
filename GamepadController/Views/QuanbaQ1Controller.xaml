@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GamepadController.Views"
         mc:Ignorable="d"
+        AllowsTransparency="True" Background="Transparent"
+        WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize"
         Title="QuanbaQ1Controller" Height="450" Width="800">
-    <Grid>
+    <Window.Resources>
+        <ContextMenu x:Key="ContextMenu">
+            <MenuItem Name="NoBorder" Click="NoBorder_Click" Header="窗口/无边框"/>
+            <Separator></Separator>
+            <MenuItem Name="GreenCurtain" Click="GreenCurtain_Click" Header="透明/绿幕"/>
+        </ContextMenu>
+    </Window.Resources>
+    <Grid x:Name="ThisGrid" Background="Transparent" ContextMenu="{StaticResource ContextMenu}">
         <RadioButton x:Name="core" GroupName="1" Content="+" HorizontalAlignment="Left" Margin="118,109,0,0" VerticalAlignment="Top" IsChecked="True"/>
         <RadioButton x:Name="up" GroupName="1" Content="↑" HorizontalAlignment="Left" Margin="118,75,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="down" GroupName="1" Content="↓" HorizontalAlignment="Left" Margin="119,146,0,0" VerticalAlignment="Top"/>
