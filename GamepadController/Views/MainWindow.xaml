@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Button x:Name="QuanbaQ1" Content="QuanbaQ1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="300" Height="180" Click="QuanbaQ1_Click"/>
+        <Button x:Name="XboxOne" Content="XboxOne" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top" Width="300" Height="180" Click="XboxOne_Click"/>
+
     </Grid>
 </Window>
