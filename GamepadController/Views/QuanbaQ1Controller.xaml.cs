@@ -24,6 +24,8 @@ namespace GamepadController.Views
         {
             InitializeComponent();
             this.Loaded += MainWindow_Loaded;
+            this.MouseDown += MainWindow_MouseDown;
+            this.MouseWheel += QuanbaQ1Controller_MouseWheel;
         }
 
         private DirectInputHelper directInputHelper;
@@ -33,38 +35,39 @@ namespace GamepadController.Views
             directInputHelper = new DirectInputHelper();
             directInputHelper.RockerChange += DirectInputHelper_RockerChange;
             directInputHelper.ButtonChange += DirectInputHelper_ButtonChange;
+            directInputHelper.ConnectGamepad();
         }
 
-        #region 右键菜单
         /// <summary>
-        /// 是否无边框
-        /// true:无边框 false:Windows边框
-        /// </summary>
-        private bool IsNoBorder;
-
-        /// <summary>
-        /// 窗口化/无边框
+        /// 拖动窗体
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void NoBorder_Click(object sender, RoutedEventArgs e)
+        private void MainWindow_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (IsNoBorder)
+            if (e.LeftButton == MouseButtonState.Pressed)
             {
-                WindowStyle = WindowStyle.SingleBorderWindow;
-                ResizeMode = ResizeMode.CanResizeWithGrip;
-                Background = Brushes.White;
+                this.DragMove();
             }
-            else
-            {
-                WindowStyle = WindowStyle.None;
-                ResizeMode = ResizeMode.NoResize;
-                Background = Brushes.Transparent;
-                AllowsTransparency = true;
-            }
-            IsNoBorder = !IsNoBorder;
         }
 
+        /// <summary>
+        /// 鼠标滑轮缩放窗体大小
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QuanbaQ1Controller_MouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            var vPercentage = e.Delta / 4800.0;
+            var vWidthDifference = this.Width * vPercentage;
+            var vHeightDifference = this.Height * vPercentage;
+            this.Width += vWidthDifference;
+            this.Height += vHeightDifference;
+            this.Top -= (vWidthDifference / 2);
+            this.Left -= (vHeightDifference / 2);
+        }
+
+        #region 右键菜单
         /// <summary>
         /// 是否绿幕
         /// true:绿幕 false:透明
@@ -88,6 +91,17 @@ namespace GamepadController.Views
             }
             IsGreenCurtain = !IsGreenCurtain;
         }
+
+        /// <summary>
+        /// 退出
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            directInputHelper.BreakOffGamepad();
+            this.Close();
+        }
         #endregion
 
         /// <summary>
@@ -101,23 +115,23 @@ namespace GamepadController.Views
                 switch (obj[0])
                 {
                     case 0:
-                        up.IsChecked = true; break;
+                        RockerUp.IsChecked = true; break;
                     case 18000:
-                        down.IsChecked = true; break;
+                        RockerDown.IsChecked = true; break;
                     case 27000:
-                        left.IsChecked = true; break;
+                        RockerLeft.IsChecked = true; break;
                     case 9000:
-                        right.IsChecked = true; break;
+                        RockerRight.IsChecked = true; break;
                     case 31500:
-                        lefttop.IsChecked = true; break;
+                        RockerLefttop.IsChecked = true; break;
                     case 4500:
-                        righttop.IsChecked = true; break;
+                        RockerRighttop.IsChecked = true; break;
                     case 22500:
-                        leftdown.IsChecked = true; break;
+                        RockerLeftdown.IsChecked = true; break;
                     case 13500:
-                        rightdown.IsChecked = true; break;
+                        RockerRightdown.IsChecked = true; break;
                     default:
-                        core.IsChecked = true; break;
+                        RockerCore.IsChecked = true; break;
                 }
             });
         }
@@ -139,16 +153,6 @@ namespace GamepadController.Views
                 L1.IsChecked = obj[4];
                 L2.IsChecked = obj[6];
             });
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            directInputHelper.ConnectGamepad();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            directInputHelper.BreakOffGamepad();
         }
     }
 }
