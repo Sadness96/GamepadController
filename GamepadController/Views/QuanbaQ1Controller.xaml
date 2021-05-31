@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GamepadController.Views"
+        xmlns:control="clr-namespace:GamepadController.Controls"
         mc:Ignorable="d"
         AllowsTransparency="True" Background="Transparent"
         WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize"
@@ -15,18 +16,30 @@
             <MenuItem Name="Close" Click="Close_Click" Header="关闭"/>
         </ContextMenu>
     </Window.Resources>
-    <Grid x:Name="ThisGrid" Background="Transparent" ContextMenu="{StaticResource ContextMenu}">
-        <Grid Margin="50" Background="Black">
-            <RadioButton x:Name="RockerCore" GroupName="1" Content="+" HorizontalAlignment="Left" Margin="118,109,0,0" VerticalAlignment="Top" IsChecked="True"/>
-            <RadioButton x:Name="RockerUp" GroupName="1" Content="↑" HorizontalAlignment="Left" Margin="118,75,0,0" VerticalAlignment="Top"/>
-            <RadioButton x:Name="RockerDown" GroupName="1" Content="↓" HorizontalAlignment="Left" Margin="119,146,0,0" VerticalAlignment="Top"/>
-            <RadioButton x:Name="RockerLeft" GroupName="1" Content="←" HorizontalAlignment="Left" Margin="72,110,0,0" VerticalAlignment="Top"/>
-            <RadioButton x:Name="RockerRight" GroupName="1" Content="→" HorizontalAlignment="Left" Margin="158,110,0,0" VerticalAlignment="Top"/>
-            <RadioButton x:Name="RockerLefttop" GroupName="1" Content="↖" HorizontalAlignment="Left" Margin="72,75,0,0" VerticalAlignment="Top"/>
-            <RadioButton x:Name="RockerRighttop" GroupName="1" Content="↗" HorizontalAlignment="Left" Margin="158,75,0,0" VerticalAlignment="Top"/>
-            <RadioButton x:Name="RockerLeftdown" GroupName="1" Content="↙" HorizontalAlignment="Left" Margin="72,146,0,0" VerticalAlignment="Top"/>
-            <RadioButton x:Name="RockerRightdown" GroupName="1" Content="↘" HorizontalAlignment="Left" Margin="158,146,0,0" VerticalAlignment="Top"/>
+    <Grid x:Name="ThisGrid" Background="Transparent" ContextMenu="{StaticResource ContextMenu}" IsEnabled="False">
+        <Grid Width="150" Height="150" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="50,50" Background="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <control:IceBallRockerControl x:Name="RockerCore" Grid.Column="1" Grid.Row="1" GroupName="1" Content="+" IsChecked="True"/>
+            <control:IceBallRockerControl x:Name="RockerUp" Grid.Column="1" Grid.Row="0" GroupName="1" Content="↑"/>
+            <control:IceBallRockerControl x:Name="RockerDown" Grid.Column="1" Grid.Row="2" GroupName="1" Content="↓"/>
+            <control:IceBallRockerControl x:Name="RockerLeft" Grid.Column="0" Grid.Row="1" GroupName="1" Content="←"/>
+            <control:IceBallRockerControl x:Name="RockerRight" Grid.Column="2" Grid.Row="1" GroupName="1" Content="→"/>
+            <control:IceBallRockerControl x:Name="RockerLefttop" Grid.Column="0" Grid.Row="0" GroupName="1" Content="↖"/>
+            <control:IceBallRockerControl x:Name="RockerRighttop" Grid.Column="2" Grid.Row="0" GroupName="1" Content="↗"/>
+            <control:IceBallRockerControl x:Name="RockerLeftdown" Grid.Column="0" Grid.Row="2" GroupName="1" Content="↙"/>
+            <control:IceBallRockerControl x:Name="RockerRightdown" Grid.Column="2" Grid.Row="2" GroupName="1" Content="↘"/>
+        </Grid>
 
+        <Grid>
             <CheckBox x:Name="A" Content="A" HorizontalAlignment="Left" Margin="347,146,0,0" VerticalAlignment="Top"/>
             <CheckBox x:Name="B" Content="B" HorizontalAlignment="Left" Margin="398,136,0,0" VerticalAlignment="Top"/>
             <CheckBox x:Name="X" Content="X" HorizontalAlignment="Left" Margin="347,121,0,0" VerticalAlignment="Top"/>
