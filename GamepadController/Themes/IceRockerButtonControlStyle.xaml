@@ -23,16 +23,16 @@
         </Setter>
     </Style>
     <SolidColorBrush x:Key="ButtonColor" Color="#FF76E1F7"/>
-    <SolidColorBrush x:Key="ButtonColorClick" Color="DeepPink"/>
+    <SolidColorBrush x:Key="ButtonColorClick" Color="OrangeRed"/>
     <RadialGradientBrush x:Key="RadialButtonColor">
         <GradientStop Color="{Binding Source={StaticResource ButtonColor},Path=Color}" Offset="0.9"/>
         <GradientStop Color="{Binding Source={StaticResource ButtonColor},Path=Color}" Offset="1"/>
-        <GradientStop Color="Transparent" Offset="0.79"/>
+        <GradientStop Color="Transparent" Offset="0.89"/>
     </RadialGradientBrush>
     <RadialGradientBrush x:Key="RadialButtonColorClick">
         <GradientStop Color="{Binding Source={StaticResource ButtonColorClick},Path=Color}" Offset="0.9"/>
         <GradientStop Color="{Binding Source={StaticResource ButtonColorClick},Path=Color}" Offset="1"/>
-        <GradientStop Color="Transparent" Offset="0.79"/>
+        <GradientStop Color="Transparent" Offset="0.89"/>
     </RadialGradientBrush>
     <Style TargetType="{x:Type control:IceRockerButtonControl}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
