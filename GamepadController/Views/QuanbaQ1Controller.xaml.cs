@@ -83,11 +83,11 @@ namespace GamepadController.Views
         {
             if (IsGreenCurtain)
             {
-                ThisGrid.Background = Brushes.Transparent;
+                BackgroundGrid.Background = Brushes.Transparent;
             }
             else
             {
-                ThisGrid.Background = Brushes.Green;
+                BackgroundGrid.Background = Brushes.Green;
             }
             IsGreenCurtain = !IsGreenCurtain;
         }

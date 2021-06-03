@@ -17,6 +17,7 @@
         </ContextMenu>
     </Window.Resources>
     <Grid x:Name="ThisGrid" Background="Transparent" ContextMenu="{StaticResource ContextMenu}">
+        <Grid x:Name="BackgroundGrid" Background="Black" Opacity="0.8"></Grid>
         <Grid Width="150" Height="150" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="50,50" Background="Transparent">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -40,14 +41,14 @@
         </Grid>
 
         <Grid>
-            <control:IceRockerButtonControl x:Name="A" Content="A" HorizontalAlignment="Left" Margin="367,180,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
-            <control:IceRockerButtonControl x:Name="B" Content="B" HorizontalAlignment="Left" Margin="418,170,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
-            <control:IceRockerButtonControl x:Name="X" Content="X" HorizontalAlignment="Left" Margin="347,121,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
-            <control:IceRockerButtonControl x:Name="Y" Content="Y" HorizontalAlignment="Left" Margin="398,110,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
-            <control:IceRockerButtonControl x:Name="R1" Content="R1" HorizontalAlignment="Left" Margin="457,99,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
-            <control:IceRockerButtonControl x:Name="R2" Content="R2" HorizontalAlignment="Left" Margin="477,159,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
-            <control:IceRockerButtonControl x:Name="L1" Content="L1" HorizontalAlignment="Left" Margin="525,88,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
-            <control:IceRockerButtonControl x:Name="L2" Content="L2" HorizontalAlignment="Left" Margin="545,148,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
+            <control:IceRockerButtonControl x:Name="A" Content="A" Foreground="White" HorizontalAlignment="Left" Margin="367,180,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
+            <control:IceRockerButtonControl x:Name="B" Content="B" Foreground="White" HorizontalAlignment="Left" Margin="418,170,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
+            <control:IceRockerButtonControl x:Name="X" Content="X" Foreground="White" HorizontalAlignment="Left" Margin="347,121,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
+            <control:IceRockerButtonControl x:Name="Y" Content="Y" Foreground="White" HorizontalAlignment="Left" Margin="398,110,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
+            <control:IceRockerButtonControl x:Name="R1" Content="R1" Foreground="White" HorizontalAlignment="Left" Margin="457,99,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
+            <control:IceRockerButtonControl x:Name="R2" Content="R2" Foreground="White" HorizontalAlignment="Left" Margin="477,159,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
+            <control:IceRockerButtonControl x:Name="L1" Content="L1" Foreground="White" HorizontalAlignment="Left" Margin="525,88,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
+            <control:IceRockerButtonControl x:Name="L2" Content="L2" Foreground="White" HorizontalAlignment="Left" Margin="545,148,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
         </Grid>
     </Grid>
 </Window>
