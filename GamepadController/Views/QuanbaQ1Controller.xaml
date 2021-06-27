@@ -6,8 +6,6 @@
         xmlns:local="clr-namespace:GamepadController.Views"
         xmlns:control="clr-namespace:GamepadController.Controls"
         mc:Ignorable="d"
-        AllowsTransparency="True" Background="Transparent"
-        WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize"
         Title="QuanbaQ1Controller" Height="450" Width="800">
     <Window.Resources>
         <ContextMenu x:Key="ContextMenu">
@@ -16,39 +14,37 @@
             <MenuItem Name="Close" Click="Close_Click" Header="关闭"/>
         </ContextMenu>
     </Window.Resources>
-    <Grid x:Name="ThisGrid" Background="Transparent" ContextMenu="{StaticResource ContextMenu}">
+    <Grid x:Name="ThisGrid" Background="Transparent" ContextMenu="{StaticResource ContextMenu}" IsEnabled="False">
         <Grid x:Name="BackgroundGrid" Background="Black" Opacity="0.8"></Grid>
-        <Grid Width="150" Height="150" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="50,50" Background="Transparent">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <control:IceBallRockerControl x:Name="RockerCore" Grid.Column="1" Grid.Row="1" GroupName="1" Content="+" IsChecked="True"/>
-            <control:IceBallRockerControl x:Name="RockerUp" Grid.Column="1" Grid.Row="0" GroupName="1" Content="↑"/>
-            <control:IceBallRockerControl x:Name="RockerDown" Grid.Column="1" Grid.Row="2" GroupName="1" Content="↓"/>
-            <control:IceBallRockerControl x:Name="RockerLeft" Grid.Column="0" Grid.Row="1" GroupName="1" Content="←"/>
-            <control:IceBallRockerControl x:Name="RockerRight" Grid.Column="2" Grid.Row="1" GroupName="1" Content="→"/>
-            <control:IceBallRockerControl x:Name="RockerLefttop" Grid.Column="0" Grid.Row="0" GroupName="1" Content="↖"/>
-            <control:IceBallRockerControl x:Name="RockerRighttop" Grid.Column="2" Grid.Row="0" GroupName="1" Content="↗"/>
-            <control:IceBallRockerControl x:Name="RockerLeftdown" Grid.Column="0" Grid.Row="2" GroupName="1" Content="↙"/>
-            <control:IceBallRockerControl x:Name="RockerRightdown" Grid.Column="2" Grid.Row="2" GroupName="1" Content="↘"/>
+        <Grid Width="150" Height="150" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="80,120" Background="Transparent">
+            <Ellipse>
+                <Ellipse.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="Transparent" Offset="0.867"/>
+                        <GradientStop Color="#4CEDFCFF" Offset="1"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <control:IceBallRockerControl x:Name="RockerCore" Grid.Column="1" Grid.Row="1" GroupName="1" Content="+" Width="50" Height="50" IsChecked="True"/>
+            <control:IceBallRockerControl x:Name="RockerUp" Grid.Column="1" Grid.Row="0" GroupName="1" Content="↑" Width="50" Height="50" Margin="0,-100,0,0"/>
+            <control:IceBallRockerControl x:Name="RockerDown" Grid.Column="1" Grid.Row="2" GroupName="1" Content="↓" Width="50" Height="50" Margin="0,100,0,0"/>
+            <control:IceBallRockerControl x:Name="RockerLeft" Grid.Column="0" Grid.Row="1" GroupName="1" Content="←" Width="50" Height="50" Margin="-100,0,0,0"/>
+            <control:IceBallRockerControl x:Name="RockerRight" Grid.Column="2" Grid.Row="1" GroupName="1" Content="→" Width="50" Height="50" Margin="100,0,0,0"/>
+            <control:IceBallRockerControl x:Name="RockerLefttop" Grid.Column="0" Grid.Row="0" GroupName="1" Content="↖" Width="50" Height="50" Margin="-75,-75,0,0"/>
+            <control:IceBallRockerControl x:Name="RockerRighttop" Grid.Column="2" Grid.Row="0" GroupName="1" Content="↗" Width="50" Height="50" Margin="75,-75,0,0"/>
+            <control:IceBallRockerControl x:Name="RockerLeftdown" Grid.Column="0" Grid.Row="2" GroupName="1" Content="↙" Width="50" Height="50" Margin="-75,75,0,0"/>
+            <control:IceBallRockerControl x:Name="RockerRightdown" Grid.Column="2" Grid.Row="2" GroupName="1" Content="↘" Width="50" Height="50" Margin="75,75,0,0"/>
         </Grid>
 
         <Grid>
-            <control:IceRockerButtonControl x:Name="A" Content="A" Foreground="White" HorizontalAlignment="Left" Margin="367,180,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
-            <control:IceRockerButtonControl x:Name="B" Content="B" Foreground="White" HorizontalAlignment="Left" Margin="418,170,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
-            <control:IceRockerButtonControl x:Name="X" Content="X" Foreground="White" HorizontalAlignment="Left" Margin="347,121,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
-            <control:IceRockerButtonControl x:Name="Y" Content="Y" Foreground="White" HorizontalAlignment="Left" Margin="398,110,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
-            <control:IceRockerButtonControl x:Name="R1" Content="R1" Foreground="White" HorizontalAlignment="Left" Margin="457,99,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
-            <control:IceRockerButtonControl x:Name="R2" Content="R2" Foreground="White" HorizontalAlignment="Left" Margin="477,159,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
-            <control:IceRockerButtonControl x:Name="L1" Content="L1" Foreground="White" HorizontalAlignment="Left" Margin="525,88,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
-            <control:IceRockerButtonControl x:Name="L2" Content="L2" Foreground="White" HorizontalAlignment="Left" Margin="545,148,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
+            <control:IceRockerButtonControl x:Name="A" Content="A" Foreground="White" HorizontalAlignment="Left" Margin="343,212,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
+            <control:IceRockerButtonControl x:Name="B" Content="B" Foreground="White" HorizontalAlignment="Left" Margin="422,202,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
+            <control:IceRockerButtonControl x:Name="X" Content="X" Foreground="White" HorizontalAlignment="Left" Margin="347,141,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
+            <control:IceRockerButtonControl x:Name="Y" Content="Y" Foreground="White" HorizontalAlignment="Left" Margin="420,126,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
+            <control:IceRockerButtonControl x:Name="R1" Content="R1" Foreground="White" HorizontalAlignment="Left" Margin="499,125,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
+            <control:IceRockerButtonControl x:Name="R2" Content="R2" Foreground="White" HorizontalAlignment="Left" Margin="499,201,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
+            <control:IceRockerButtonControl x:Name="L1" Content="L1" Foreground="White" HorizontalAlignment="Left" Margin="577,130,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
+            <control:IceRockerButtonControl x:Name="L2" Content="L2" Foreground="White" HorizontalAlignment="Left" Margin="575,204,0,0" VerticalAlignment="Top" Width="50" Height="50" FontSize="24"/>
         </Grid>
     </Grid>
 </Window>
