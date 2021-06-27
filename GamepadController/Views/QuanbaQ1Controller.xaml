@@ -9,8 +9,6 @@
         Title="QuanbaQ1Controller" Height="450" Width="800">
     <Window.Resources>
         <ContextMenu x:Key="ContextMenu">
-            <MenuItem Name="GreenCurtain" Click="GreenCurtain_Click" Header="透明/绿幕"/>
-            <Separator></Separator>
             <MenuItem Name="Close" Click="Close_Click" Header="关闭"/>
         </ContextMenu>
     </Window.Resources>

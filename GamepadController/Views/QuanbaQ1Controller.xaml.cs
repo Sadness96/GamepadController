@@ -75,24 +75,6 @@ namespace GamepadController.Views
         private bool IsGreenCurtain = false;
 
         /// <summary>
-        /// 透明/绿幕
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void GreenCurtain_Click(object sender, RoutedEventArgs e)
-        {
-            if (IsGreenCurtain)
-            {
-                BackgroundGrid.Background = Brushes.Transparent;
-            }
-            else
-            {
-                BackgroundGrid.Background = Brushes.Green;
-            }
-            IsGreenCurtain = !IsGreenCurtain;
-        }
-
-        /// <summary>
         /// 退出
         /// </summary>
         /// <param name="sender"></param>
