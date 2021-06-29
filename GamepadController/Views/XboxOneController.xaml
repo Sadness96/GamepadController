@@ -6,7 +6,12 @@
         xmlns:local="clr-namespace:GamepadController.Views"
         mc:Ignorable="d"
         Title="XboxOneController" Height="450" Width="800">
-    <Grid>
-        
+    <Window.Resources>
+        <ContextMenu x:Key="ContextMenu">
+            <MenuItem Name="Close" Click="Close_Click" Header="关闭"/>
+        </ContextMenu>
+    </Window.Resources>
+    <Grid x:Name="ThisGrid" Background="Transparent" ContextMenu="{StaticResource ContextMenu}" IsEnabled="False">
+        <Grid x:Name="BackgroundGrid" Background="Black" Opacity="0.8"></Grid>
     </Grid>
 </Window>

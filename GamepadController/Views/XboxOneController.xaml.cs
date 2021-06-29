@@ -23,5 +23,17 @@ namespace GamepadController.Views
         {
             InitializeComponent();
         }
+
+        #region 右键菜单
+        /// <summary>
+        /// 退出
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
     }
 }

@@ -63,17 +63,11 @@ namespace GamepadController.Views
             var vHeightDifference = this.Height * vPercentage;
             this.Width += vWidthDifference;
             this.Height += vHeightDifference;
-            this.Top -= (vWidthDifference / 2);
-            this.Left -= (vHeightDifference / 2);
+            this.Top -= vWidthDifference / 2;
+            this.Left -= vHeightDifference / 2;
         }
 
         #region 右键菜单
-        /// <summary>
-        /// 是否绿幕
-        /// true:绿幕 false:透明
-        /// </summary>
-        private bool IsGreenCurtain = false;
-
         /// <summary>
         /// 退出
         /// </summary>
