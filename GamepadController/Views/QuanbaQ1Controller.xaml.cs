@@ -25,7 +25,6 @@ namespace GamepadController.Views
             InitializeComponent();
             this.Loaded += MainWindow_Loaded;
             this.MouseDown += MainWindow_MouseDown;
-            this.MouseWheel += QuanbaQ1Controller_MouseWheel;
         }
 
         private DirectInputHelper directInputHelper;
@@ -50,35 +49,6 @@ namespace GamepadController.Views
                 this.DragMove();
             }
         }
-
-        /// <summary>
-        /// 鼠标滑轮缩放窗体大小
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void QuanbaQ1Controller_MouseWheel(object sender, MouseWheelEventArgs e)
-        {
-            var vPercentage = e.Delta / 4800.0;
-            var vWidthDifference = this.Width * vPercentage;
-            var vHeightDifference = this.Height * vPercentage;
-            this.Width += vWidthDifference;
-            this.Height += vHeightDifference;
-            this.Top -= vWidthDifference / 2;
-            this.Left -= vHeightDifference / 2;
-        }
-
-        #region 右键菜单
-        /// <summary>
-        /// 退出
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Close_Click(object sender, RoutedEventArgs e)
-        {
-            directInputHelper.BreakOffGamepad();
-            this.Close();
-        }
-        #endregion
 
         /// <summary>
         /// 摇杆状态改变时触发

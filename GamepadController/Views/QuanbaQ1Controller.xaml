@@ -7,12 +7,7 @@
         xmlns:control="clr-namespace:GamepadController.Controls"
         mc:Ignorable="d"
         Title="QuanbaQ1Controller" Height="450" Width="800">
-    <Window.Resources>
-        <ContextMenu x:Key="ContextMenu">
-            <MenuItem Name="Close" Click="Close_Click" Header="关闭"/>
-        </ContextMenu>
-    </Window.Resources>
-    <Grid x:Name="ThisGrid" Background="Transparent" ContextMenu="{StaticResource ContextMenu}" IsEnabled="False">
+    <Grid x:Name="ThisGrid" Background="Transparent" IsEnabled="False">
         <Grid x:Name="BackgroundGrid" Background="Black" Opacity="0.8"></Grid>
         <Grid Width="150" Height="150" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="80,120" Background="Transparent">
             <Ellipse>
