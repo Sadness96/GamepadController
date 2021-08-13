@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GamepadController.Helper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,18 +23,30 @@ namespace GamepadController.Views
         public XboxOneController()
         {
             InitializeComponent();
+            this.Loaded += XboxOneController_Loaded;
+            this.MouseDown += XboxOneController_MouseDown; ;
         }
 
-        #region 右键菜单
+        private XInputHelper xInputHelper;
+
+        private void XboxOneController_Loaded(object sender, RoutedEventArgs e)
+        {
+            xInputHelper = new XInputHelper();
+
+            xInputHelper.ConnectGamepad();
+        }
+
         /// <summary>
-        /// 退出
+        /// 拖动窗体
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Close_Click(object sender, RoutedEventArgs e)
+        private void XboxOneController_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            this.Close();
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                this.DragMove();
+            }
         }
-        #endregion
     }
 }
