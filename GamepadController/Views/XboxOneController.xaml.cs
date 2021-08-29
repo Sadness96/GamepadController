@@ -32,7 +32,13 @@ namespace GamepadController.Views
         private void XboxOneController_Loaded(object sender, RoutedEventArgs e)
         {
             xInputHelper = new XInputHelper();
-
+            xInputHelper.ButtonsChange += XInputHelper_ButtonsChange;
+            xInputHelper.LeftTriggerChange += XInputHelper_LeftTriggerChange;
+            xInputHelper.RightTriggerChange += XInputHelper_RightTriggerChange;
+            xInputHelper.LeftThumbXChange += XInputHelper_LeftThumbXChange;
+            xInputHelper.LeftThumbYChange += XInputHelper_LeftThumbYChange;
+            xInputHelper.RightThumbXChange += XInputHelper_RightThumbXChange;
+            xInputHelper.RightThumbYChange += XInputHelper_RightThumbYChange;
             xInputHelper.ConnectGamepad();
         }
 
@@ -47,6 +53,69 @@ namespace GamepadController.Views
             {
                 this.DragMove();
             }
+        }
+
+        /// <summary>
+        /// 按键改变时触发
+        /// </summary>
+        /// <param name="obj"></param>
+        private void XInputHelper_ButtonsChange(SharpDX.XInput.GamepadButtonFlags obj)
+        {
+
+        }
+
+        /// <summary>
+        /// LT 按键变化事件
+        /// </summary>
+        /// <param name="obj"></param>
+        private void XInputHelper_LeftTriggerChange(byte obj)
+        {
+
+        }
+
+        /// <summary>
+        /// RT 按键变化事件
+        /// </summary>
+        /// <param name="obj"></param>
+        private void XInputHelper_RightTriggerChange(byte obj)
+        {
+
+        }
+
+        /// <summary>
+        /// 左摇杆 X 变化事件
+        /// </summary>
+        /// <param name="obj"></param>
+        private void XInputHelper_LeftThumbXChange(short obj)
+        {
+
+        }
+
+        /// <summary>
+        /// 左摇杆 Y 变化事件
+        /// </summary>
+        /// <param name="obj"></param>
+        private void XInputHelper_LeftThumbYChange(short obj)
+        {
+
+        }
+
+        /// <summary>
+        /// 右摇杆 X 变化事件
+        /// </summary>
+        /// <param name="obj"></param>
+        private void XInputHelper_RightThumbXChange(short obj)
+        {
+
+        }
+
+        /// <summary>
+        /// 右摇杆 Y 变化事件
+        /// </summary>
+        /// <param name="obj"></param>
+        private void XInputHelper_RightThumbYChange(short obj)
+        {
+
         }
     }
 }

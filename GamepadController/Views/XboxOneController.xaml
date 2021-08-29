@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="XboxOneController" Height="450" Width="800">
     <Grid x:Name="ThisGrid" Background="Transparent" IsEnabled="False">
-        <Grid x:Name="BackgroundGrid" Background="Black" Opacity="0.8"></Grid>
+        <Grid x:Name="BackgroundGrid" Background="Black" Opacity="0.8"/>
+        <Image Source="/Images/xbox.png" Width="517" Height="357">
+
+        </Image>
     </Grid>
 </Window>

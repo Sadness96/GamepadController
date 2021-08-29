@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="QuanbaQ1Controller" Height="450" Width="800">
     <Grid x:Name="ThisGrid" Background="Transparent" IsEnabled="False">
-        <Grid x:Name="BackgroundGrid" Background="Black" Opacity="0.8"></Grid>
+        <Grid x:Name="BackgroundGrid" Background="Black" Opacity="0.8"/>
         <Grid Width="150" Height="150" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="80,120" Background="Transparent">
             <Ellipse>
                 <Ellipse.Fill>
