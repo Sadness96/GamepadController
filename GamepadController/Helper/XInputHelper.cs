@@ -222,7 +222,7 @@ namespace GamepadController.Helper
                     RightThumbYChange?.Invoke(RightThumbYData);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 BreakOffGamepad();
             }

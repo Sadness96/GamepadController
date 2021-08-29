@@ -61,7 +61,14 @@ namespace GamepadController.Views
         /// <param name="obj"></param>
         private void XInputHelper_ButtonsChange(SharpDX.XInput.GamepadButtonFlags obj)
         {
-
+            var vObjSplit = obj.ToString()?.Replace(" ", "")?.Split(',');
+            this.Dispatcher.Invoke(new Action(() =>
+            {
+                IceXboxkeyABXY.XKeyState = vObjSplit.Contains($"{SharpDX.XInput.GamepadButtonFlags.X}");
+                IceXboxkeyABXY.YKeyState = vObjSplit.Contains($"{SharpDX.XInput.GamepadButtonFlags.Y}");
+                IceXboxkeyABXY.AKeyState = vObjSplit.Contains($"{SharpDX.XInput.GamepadButtonFlags.A}");
+                IceXboxkeyABXY.BKeyState = vObjSplit.Contains($"{SharpDX.XInput.GamepadButtonFlags.B}");
+            }));
         }
 
         /// <summary>

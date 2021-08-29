@@ -3,13 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:control="clr-namespace:GamepadController.Controls"
         xmlns:local="clr-namespace:GamepadController.Views"
         mc:Ignorable="d"
         Title="XboxOneController" Height="450" Width="800">
     <Grid x:Name="ThisGrid" Background="Transparent" IsEnabled="False">
         <Grid x:Name="BackgroundGrid" Background="Black" Opacity="0.8"/>
-        <Image Source="/Images/xbox.png" Width="517" Height="357">
+        <Grid Width="517" Height="357">
+            <Image Source="/Images/xbox.png"/>
+            <control:IceXboxkeyABXY x:Name="IceXboxkeyABXY" Width="110" Height="110" Margin="250,-150,0,0"/>
 
-        </Image>
+        </Grid>
     </Grid>
 </Window>
