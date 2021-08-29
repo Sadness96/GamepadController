@@ -105,13 +105,13 @@ namespace GamepadController.Helper
                 if (RockerData == null || !Enumerable.SequenceEqual(RockerData, joys.PointOfViewControllers))
                 {
                     RockerData = joys.PointOfViewControllers;
-                    RockerChange.Invoke(RockerData);
+                    RockerChange?.Invoke(RockerData);
                 }
                 // 按钮
                 if (ButtonData == null || !Enumerable.SequenceEqual(ButtonData, joys.Buttons))
                 {
                     ButtonData = joys.Buttons;
-                    ButtonChange.Invoke(ButtonData);
+                    ButtonChange?.Invoke(ButtonData);
                 }
             }
             catch (Exception)

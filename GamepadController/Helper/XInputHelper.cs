@@ -30,6 +30,83 @@ namespace GamepadController.Helper
         private Timer _timer;
 
         /// <summary>
+        /// 当前按键状态
+        /// 用于判断两次按键差异
+        /// </summary>
+        private GamepadButtonFlags ButtonsData;
+
+        /// <summary>
+        /// LT 按键状态
+        /// 用于判断两次按键差异
+        /// </summary>
+        private byte LeftTriggerData;
+
+        /// <summary>
+        /// RT 按键状态
+        /// 用于判断两次按键差异
+        /// </summary>
+        private byte RightTriggerData;
+
+        /// <summary>
+        /// 左摇杆 X 坐标状态
+        /// 用于判断两次摇杆坐标差异
+        /// </summary>
+        private short LeftThumbXData;
+
+        /// <summary>
+        /// 左摇杆 Y 坐标状态
+        /// 用于判断两次摇杆坐标差异
+        /// </summary>
+        private short LeftThumbYData;
+
+        /// <summary>
+        /// 右摇杆 X 坐标状态
+        /// 用于判断两次摇杆坐标差异
+        /// </summary>
+        private short RightThumbXData;
+
+        /// <summary>
+        /// 右摇杆 Y 坐标状态
+        /// 用于判断两次摇杆坐标差异
+        /// </summary>
+        private short RightThumbYData;
+
+        /// <summary>
+        /// 按钮变化事件
+        /// </summary>
+        public event Action<GamepadButtonFlags> ButtonsChange;
+
+        /// <summary>
+        /// LT 按键变化事件
+        /// </summary>
+        public event Action<byte> LeftTriggerChange;
+
+        /// <summary>
+        /// LT 按键变化事件
+        /// </summary>
+        public event Action<byte> RightTriggerChange;
+
+        /// <summary>
+        /// 左摇杆 X 变化事件
+        /// </summary>
+        public event Action<short> LeftThumbXChange;
+
+        /// <summary>
+        /// 左摇杆 Y 变化事件
+        /// </summary>
+        public event Action<short> LeftThumbYChange;
+
+        /// <summary>
+        /// 右摇杆 X 变化事件
+        /// </summary>
+        public event Action<short> RightThumbXChange;
+
+        /// <summary>
+        /// 右摇杆 Y 变化事件
+        /// </summary>
+        public event Action<short> RightThumbYChange;
+
+        /// <summary>
         /// 连接控制器
         /// </summary>
         /// <returns></returns>
@@ -95,6 +172,55 @@ namespace GamepadController.Helper
 
                 // 获取状态
                 var vGetState = controller.GetState();
+                // 按钮
+                var vButtons = vGetState.Gamepad.Buttons;
+                if (ButtonsData != vButtons)
+                {
+                    ButtonsData = vButtons;
+                    ButtonsChange?.Invoke(ButtonsData);
+                }
+                // LT 按键 0-255
+                var vLeftTrigger = vGetState.Gamepad.LeftTrigger;
+                if (LeftTriggerData != vLeftTrigger)
+                {
+                    LeftTriggerData = vLeftTrigger;
+                    LeftTriggerChange?.Invoke(LeftTriggerData);
+                }
+                // RT 按键 0-255
+                var vRightTrigger = vGetState.Gamepad.RightTrigger;
+                if (RightTriggerData != vRightTrigger)
+                {
+                    RightTriggerData = vRightTrigger;
+                    RightTriggerChange?.Invoke(RightTriggerData);
+                }
+                // 左摇杆 X
+                var vLeftThumbX = vGetState.Gamepad.LeftThumbX;
+                if (!LeftThumbXData.Equals(vLeftThumbX))
+                {
+                    LeftThumbXData = vLeftThumbX;
+                    LeftThumbXChange?.Invoke(LeftThumbXData);
+                }
+                // 左摇杆 Y
+                var vLeftThumbY = vGetState.Gamepad.LeftThumbY;
+                if (!LeftThumbYData.Equals(vLeftThumbY))
+                {
+                    LeftThumbYData = vLeftThumbY;
+                    LeftThumbYChange?.Invoke(LeftThumbYData);
+                }
+                // 右摇杆 X
+                var vRightThumbX = vGetState.Gamepad.RightThumbX;
+                if (!RightThumbXData.Equals(vRightThumbX))
+                {
+                    RightThumbXData = vRightThumbX;
+                    RightThumbXChange?.Invoke(RightThumbXData);
+                }
+                // 右摇杆 Y
+                var vRightThumbY = vGetState.Gamepad.RightThumbY;
+                if (!RightThumbYData.Equals(vRightThumbY))
+                {
+                    RightThumbYData = vRightThumbY;
+                    RightThumbYChange?.Invoke(RightThumbYData);
+                }
             }
             catch (Exception)
             {
