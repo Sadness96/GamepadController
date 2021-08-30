@@ -76,6 +76,9 @@ namespace GamepadController.Views
 
                 IceXboxMenu.BackKeyState = vObjSplit.Contains($"{SharpDX.XInput.GamepadButtonFlags.Back}");
                 IceXboxMenu.StartKeyState = vObjSplit.Contains($"{SharpDX.XInput.GamepadButtonFlags.Start}");
+
+                IceXboxLBRB.LBKeyState = vObjSplit.Contains($"{SharpDX.XInput.GamepadButtonFlags.LeftShoulder}");
+                IceXboxLBRB.RBKeyState = vObjSplit.Contains($"{SharpDX.XInput.GamepadButtonFlags.RightShoulder}");
             }));
         }
 

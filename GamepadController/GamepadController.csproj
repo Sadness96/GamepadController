@@ -72,6 +72,9 @@
     <Compile Include="Controls\IceXboxkeyLRTB.xaml.cs">
       <DependentUpon>IceXboxkeyLRTB.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\IceXboxLBRB.xaml.cs">
+      <DependentUpon>IceXboxLBRB.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\IceXboxMenu.xaml.cs">
       <DependentUpon>IceXboxMenu.xaml</DependentUpon>
     </Compile>
@@ -100,6 +103,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\IceXboxkeyLRTB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\IceXboxLBRB.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
