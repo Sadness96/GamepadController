@@ -15,6 +15,7 @@
             <control:IceXboxkeyLRTB x:Name="IceXboxkeyLRTB" Width="80" Height="80" Margin="-180,20,0,0"/>
             <control:IceXboxRocker x:Name="IceXboxRockerLeft" Width="80" Height="80" Margin="-250,-160,0,0"/>
             <control:IceXboxRocker x:Name="IceXboxRockerRight" Width="80" Height="80" Margin="120,20,0,0"/>
+            <control:IceXboxMenu x:Name="IceXboxMenu" Width="100" Height="28" Margin="0,-160,0,0"/>
         </Grid>
     </Grid>
 </Window>
