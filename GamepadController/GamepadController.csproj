@@ -75,6 +75,9 @@
     <Compile Include="Controls\IceXboxLBRB.xaml.cs">
       <DependentUpon>IceXboxLBRB.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\IceXboxLTRT.xaml.cs">
+      <DependentUpon>IceXboxLTRT.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\IceXboxMenu.xaml.cs">
       <DependentUpon>IceXboxMenu.xaml</DependentUpon>
     </Compile>
@@ -82,6 +85,7 @@
       <DependentUpon>IceXboxRocker.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\XboxKeyStateConverter.cs" />
+    <Compile Include="Converters\XboxLTRTOpacity.cs" />
     <Compile Include="Converters\XboxRockerThumbConverter.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -107,6 +111,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\IceXboxLBRB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\IceXboxLTRT.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

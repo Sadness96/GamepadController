@@ -88,7 +88,10 @@ namespace GamepadController.Views
         /// <param name="obj"></param>
         private void XInputHelper_LeftTriggerChange(byte obj)
         {
-
+            this.Dispatcher.Invoke(new Action(() =>
+            {
+                IceXboxLTRT.LTKeyState = obj;
+            }));
         }
 
         /// <summary>
@@ -97,7 +100,10 @@ namespace GamepadController.Views
         /// <param name="obj"></param>
         private void XInputHelper_RightTriggerChange(byte obj)
         {
-
+            this.Dispatcher.Invoke(new Action(() =>
+            {
+                IceXboxLTRT.RTKeyState = obj;
+            }));
         }
 
         /// <summary>
