@@ -69,6 +69,9 @@
     <Compile Include="Controls\IceXboxkeyABXY.xaml.cs">
       <DependentUpon>IceXboxkeyABXY.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\IceXboxkeyLRTB.xaml.cs">
+      <DependentUpon>IceXboxkeyLRTB.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converters\XboxKeyStateConverter.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -86,6 +89,10 @@
     <Compile Include="Helper\DirectInputHelper.cs" />
     <Compile Include="Helper\XInputHelper.cs" />
     <Page Include="Controls\IceXboxkeyABXY.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\IceXboxkeyLRTB.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

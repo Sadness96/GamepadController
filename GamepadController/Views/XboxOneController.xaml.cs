@@ -68,6 +68,11 @@ namespace GamepadController.Views
                 IceXboxkeyABXY.YKeyState = vObjSplit.Contains($"{SharpDX.XInput.GamepadButtonFlags.Y}");
                 IceXboxkeyABXY.AKeyState = vObjSplit.Contains($"{SharpDX.XInput.GamepadButtonFlags.A}");
                 IceXboxkeyABXY.BKeyState = vObjSplit.Contains($"{SharpDX.XInput.GamepadButtonFlags.B}");
+
+                IceXboxkeyLRTB.TopKeyState = vObjSplit.Contains($"{SharpDX.XInput.GamepadButtonFlags.DPadUp}");
+                IceXboxkeyLRTB.ButtomKeyState = vObjSplit.Contains($"{SharpDX.XInput.GamepadButtonFlags.DPadDown}");
+                IceXboxkeyLRTB.LeftKeyState = vObjSplit.Contains($"{SharpDX.XInput.GamepadButtonFlags.DPadLeft}");
+                IceXboxkeyLRTB.RightKeyState = vObjSplit.Contains($"{SharpDX.XInput.GamepadButtonFlags.DPadRight}");
             }));
         }
 
