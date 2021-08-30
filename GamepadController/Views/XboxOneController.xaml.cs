@@ -100,7 +100,10 @@ namespace GamepadController.Views
         /// <param name="obj"></param>
         private void XInputHelper_LeftThumbXChange(short obj)
         {
-
+            this.Dispatcher.Invoke(new Action(() =>
+            {
+                IceXboxRockerLeft.ThumbX = obj;
+            }));
         }
 
         /// <summary>
@@ -109,7 +112,10 @@ namespace GamepadController.Views
         /// <param name="obj"></param>
         private void XInputHelper_LeftThumbYChange(short obj)
         {
-
+            this.Dispatcher.Invoke(new Action(() =>
+            {
+                IceXboxRockerLeft.ThumbY = obj;
+            }));
         }
 
         /// <summary>
@@ -118,7 +124,10 @@ namespace GamepadController.Views
         /// <param name="obj"></param>
         private void XInputHelper_RightThumbXChange(short obj)
         {
-
+            this.Dispatcher.Invoke(new Action(() =>
+            {
+                IceXboxRockerRight.ThumbX = obj;
+            }));
         }
 
         /// <summary>
@@ -127,7 +136,10 @@ namespace GamepadController.Views
         /// <param name="obj"></param>
         private void XInputHelper_RightThumbYChange(short obj)
         {
-
+            this.Dispatcher.Invoke(new Action(() =>
+            {
+                IceXboxRockerRight.ThumbY = obj;
+            }));
         }
     }
 }

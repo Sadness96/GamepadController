@@ -72,7 +72,11 @@
     <Compile Include="Controls\IceXboxkeyLRTB.xaml.cs">
       <DependentUpon>IceXboxkeyLRTB.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\IceXboxRocker.xaml.cs">
+      <DependentUpon>IceXboxRocker.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converters\XboxKeyStateConverter.cs" />
+    <Compile Include="Converters\XboxRockerThumbConverter.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -93,6 +97,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\IceXboxkeyLRTB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\IceXboxRocker.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

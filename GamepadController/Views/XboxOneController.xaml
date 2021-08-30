@@ -13,6 +13,8 @@
             <Image Source="/Images/xbox.png"/>
             <control:IceXboxkeyABXY x:Name="IceXboxkeyABXY" Width="110" Height="110" Margin="250,-150,0,0"/>
             <control:IceXboxkeyLRTB x:Name="IceXboxkeyLRTB" Width="80" Height="80" Margin="-180,20,0,0"/>
+            <control:IceXboxRocker x:Name="IceXboxRockerLeft" Width="80" Height="80" Margin="-250,-160,0,0"/>
+            <control:IceXboxRocker x:Name="IceXboxRockerRight" Width="80" Height="80" Margin="120,20,0,0"/>
         </Grid>
     </Grid>
 </Window>
