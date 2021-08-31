@@ -14,12 +14,12 @@
         <Grid Height="40" Width="40" HorizontalAlignment="Left">
             <Ellipse Fill="Orange" Opacity="{Binding Path=LTKeyState,Converter={StaticResource _XboxLTRTOpacity},RelativeSource={RelativeSource AncestorType=UserControl}}"/>
             <Ellipse Stroke="White" StrokeThickness="2" />
-            <Label Content="LB" Foreground="White" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label Content="LT" Foreground="White" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
         <Grid Height="40" Width="40" HorizontalAlignment="Right">
             <Ellipse Fill="Orange" Opacity="{Binding Path=RTKeyState,Converter={StaticResource _XboxLTRTOpacity},RelativeSource={RelativeSource AncestorType=UserControl}}"/>
             <Ellipse Stroke="White" StrokeThickness="2" />
-            <Label Content="RB" Foreground="White" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label Content="RT" Foreground="White" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
     </Grid>
 </UserControl>
