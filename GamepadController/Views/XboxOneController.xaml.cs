@@ -79,6 +79,9 @@ namespace GamepadController.Views
 
                 IceXboxLBRB.LBKeyState = vObjSplit.Contains($"{SharpDX.XInput.GamepadButtonFlags.LeftShoulder}");
                 IceXboxLBRB.RBKeyState = vObjSplit.Contains($"{SharpDX.XInput.GamepadButtonFlags.RightShoulder}");
+
+                IceXboxRockerLeft.ThumbKeyState = vObjSplit.Contains($"{SharpDX.XInput.GamepadButtonFlags.LeftThumb}");
+                IceXboxRockerRight.ThumbKeyState = vObjSplit.Contains($"{SharpDX.XInput.GamepadButtonFlags.RightThumb}");
             }));
         }
 

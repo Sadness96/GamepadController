@@ -8,7 +8,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="80" d:DesignWidth="80">
     <UserControl.Resources>
+        <cov:XboxKeyStateConverter x:Key="_XboxKeyStateConverter"/>
         <cov:XboxRockerThumbConverter x:Key="_XboxRockerThumbConverter"/>
+
+        <SolidColorBrush x:Key="WhiteBrush" Color="White"/>
     </UserControl.Resources>
     <Grid>
         <Ellipse Stroke="White" StrokeThickness="2" />
@@ -19,7 +22,14 @@
                     <Binding Path="ThumbY" RelativeSource="{RelativeSource AncestorType=UserControl}"/>
                 </MultiBinding>
             </Grid.Margin>
-            <Ellipse Fill="White" />
+            <Ellipse>
+                <Ellipse.Fill>
+                    <MultiBinding Converter="{StaticResource _XboxKeyStateConverter}">
+                        <Binding Path="ThumbKeyState" RelativeSource="{RelativeSource AncestorType=UserControl}"/>
+                        <Binding Source="{StaticResource WhiteBrush}"/>
+                    </MultiBinding>
+                </Ellipse.Fill>
+            </Ellipse>
             <Ellipse Fill="Black" Height="2" Width="2" Margin="0,-40,0,0"/>
             <Ellipse Fill="Black" Height="2" Width="2" Margin="-40,0,0,0"/>
             <Ellipse Fill="Black" Height="2" Width="2" Margin="0,0,-40,0"/>

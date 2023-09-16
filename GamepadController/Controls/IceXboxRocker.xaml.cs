@@ -46,5 +46,16 @@ namespace GamepadController.Controls
         }
         public static readonly DependencyProperty ThumbYProperty =
             DependencyProperty.Register("ThumbY", typeof(short), typeof(IceXboxRocker));
+
+        /// <summary>
+        /// 摇杆按键
+        /// </summary>
+        public bool ThumbKeyState
+        {
+            get { return (bool)GetValue(ThumbKeyStateProperty); }
+            set { SetValue(ThumbKeyStateProperty, value); }
+        }
+        public static readonly DependencyProperty ThumbKeyStateProperty =
+            DependencyProperty.Register("ThumbKeyState", typeof(bool), typeof(IceXboxRocker));
     }
 }

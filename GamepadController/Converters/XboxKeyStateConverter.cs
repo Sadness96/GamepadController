@@ -12,14 +12,25 @@ namespace GamepadController.Converters
     /// <summary>
     /// Xbox 按键状态
     /// </summary>
-    public class XboxKeyStateConverter : IValueConverter
+    public class XboxKeyStateConverter : IMultiValueConverter
     {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        /// <summary>
+        /// 按键颜色转换器
+        /// </summary>
+        /// <param name="values">按键状态、默认颜色</param>
+        /// <param name="targetType"></param>
+        /// <param name="parameter"></param>
+        /// <param name="culture"></param>
+        /// <returns></returns>
+        public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            return (bool)value ? Brushes.Orange : Brushes.Transparent;
+            var v1 = bool.Parse($"{values[0]}");
+            Brush v2 = values[1] as Brush;
+
+            return v1 ? Brushes.Orange : v2;
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
         }
